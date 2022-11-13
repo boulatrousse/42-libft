@@ -6,7 +6,7 @@
 /*   By: lboulatr <lboulatr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 12:50:55 by lboulatr          #+#    #+#             */
-/*   Updated: 2022/11/10 14:03:14 by lboulatr         ###   ########.fr       */
+/*   Updated: 2022/11/13 16:44:06 by lboulatr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,27 +41,10 @@ char    *cut(char *str, char c)
     return (str);
 }
 
-
-// char    **ft_split(char const *s, char c)
-// {
-    
-    
-// }
-
-#include <stdio.h>
-int main()
+char		**ft_split(char const *s, char c)
 {
-    char *str = "       Olympus  999   ";
-    // char charset = ' ';
-    // char **all_words = ft_split(str, charset);
-    // int index = 0;
-    // while (all_words[index])
-    // {
-    //     printf("%s\n",all_words[index]);
-    //     index++;
-    // }
-    cut(str, ' ');
-    printf("%s\n", str);
-    return 0;
-    
+    char    *str;
+    str = (char *)s;
+    c = 1;
+    return (0);
 }

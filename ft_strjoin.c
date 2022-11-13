@@ -6,7 +6,7 @@
 /*   By: lboulatr <lboulatr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 09:51:49 by lboulatr          #+#    #+#             */
-/*   Updated: 2022/11/10 11:40:26 by lboulatr         ###   ########.fr       */
+/*   Updated: 2022/11/13 17:29:26 by lboulatr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 
 	j = 0;
 	k = 0;
+	if (!s1 || !s2)
+		return (0);
 	dest = malloc(sizeof(char) * ((ft_strlen(s1) + ft_strlen(s2)) + 1));
 	if (dest == NULL)
 		return (0);
