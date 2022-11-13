@@ -6,7 +6,7 @@
 /*   By: lboulatr <lboulatr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/13 15:06:30 by lboulatr          #+#    #+#             */
-/*   Updated: 2022/11/13 15:17:42 by lboulatr         ###   ########lyon.fr   */
+/*   Updated: 2022/11/13 15:50:26 by lboulatr         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	count(int n)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	if (n == 0)
@@ -34,12 +34,12 @@ int	count(int n)
 
 char	*is_pos(int n, int i)
 {
-	int x;
-	int y;
-	char    *str;
+	int		x;
+	int		y;
+	char	*str;
 
 	x = 0;
-	y = i - 1; 
+	y = i - 1;
 	str = malloc(i * sizeof(char));
 	if (str == NULL)
 		return (0);
@@ -55,12 +55,12 @@ char	*is_pos(int n, int i)
 
 char	*is_neg(int n, int i)
 {
-	int x;
-	int y;
-	char    *str;
+	int		x;
+	int		y;
+	char	*str;
 
 	x = 0;
-	y = i - 1; 
+	y = i - 1;
 	n *= -1;
 	str = malloc(i * sizeof(char));
 	if (str == NULL)
@@ -83,8 +83,8 @@ char	*is_neg(int n, int i)
 
 char	*ft_itoa(int n)
 {
-	int i;
-	char    *str;
+	int		i;
+	char	*str;
 
 	i = count(n) + 1;
 	if (n >= 0)
