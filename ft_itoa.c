@@ -6,11 +6,12 @@
 /*   By: lboulatr <lboulatr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/13 15:06:30 by lboulatr          #+#    #+#             */
-/*   Updated: 2022/11/14 09:02:17 by lboulatr         ###   ########.fr       */
+/*   Updated: 2022/11/14 14:01:24 by lboulatr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
 int	count(int n)
 {
@@ -84,9 +85,17 @@ char	*is_neg(int n, int i)
 char	*ft_itoa(int n)
 {
 	int		i;
+	long int	x;
 	char	*str;
 
 	i = count(n) + 1;
+	x = n;
+	if (x == -2147483648)
+	{
+		str = "-2147483648";
+		str[11] = '\0';
+		return (str);
+	}
 	if (n >= 0)
 		str = is_pos(n, i);
 	else

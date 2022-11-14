@@ -6,7 +6,7 @@
 /*   By: lboulatr <lboulatr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 09:42:51 by lboulatr          #+#    #+#             */
-/*   Updated: 2022/11/09 10:09:33 by lboulatr         ###   ########.fr       */
+/*   Updated: 2022/11/14 14:18:41 by lboulatr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,10 @@
 size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
 	unsigned int		i;
-	unsigned int		x;
 
 	i = 0;
-	x = ft_strlen(src);
 	if (size == 0)
-		return (0);
+		return (ft_strlen(src));
 	else
 	{
 		while ((src[i] != '\0') && (i < size - 1))
@@ -30,5 +28,5 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 		}
 		dst[i] = '\0';
 	}
-	return (x);
+	return (ft_strlen(src));
 }

@@ -6,7 +6,7 @@
 /*   By: lboulatr <lboulatr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 08:13:31 by lboulatr          #+#    #+#             */
-/*   Updated: 2022/11/13 17:08:08 by lboulatr         ###   ########.fr       */
+/*   Updated: 2022/11/14 14:14:16 by lboulatr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,6 @@ char	*ft_strdup(const char *s1)
 	if (s2 == NULL)
 		return (0);
 	ft_memcpy(s2, s1, i);
-	s2[i] = '\0';
+	s2[i - 1] = '\0';
 	return (s2);
 }

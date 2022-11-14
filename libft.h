@@ -6,7 +6,7 @@
 /*   By: lboulatr <lboulatr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 13:13:19 by lboulatr          #+#    #+#             */
-/*   Updated: 2022/11/13 16:34:19 by lboulatr         ###   ########lyon.fr   */
+/*   Updated: 2022/11/14 14:01:45 by lboulatr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ int			ft_isdigit(int c);
 int			ft_isalpha(int c);
 int			ft_isascii(int c);
 int			ft_isprint(int c);
+int	        ft_isalnum(int c);
 size_t		ft_strlen(const char *str);
 void		*ft_memset(void *b, int c, size_t len);
 void		ft_bzero(void *b, size_t n);
@@ -48,5 +49,7 @@ void		ft_putchar_fd(char c, int fd);
 void		ft_putstr_fd(char *s, int fd);
 void		ft_putendl_fd(char *s, int fd);
 void		ft_putnbr_fd(int n, int fd);
+char	    *ft_strnstr(const char *haystack, const char *needle, size_t len);
+size_t	    ft_strlcat(char *dst, const char *src, size_t size);
 
 #endif 
