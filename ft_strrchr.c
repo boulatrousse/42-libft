@@ -6,7 +6,7 @@
 /*   By: lboulatr <lboulatr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 11:38:34 by lboulatr          #+#    #+#             */
-/*   Updated: 2022/11/09 12:29:10 by lboulatr         ###   ########lyon.fr   */
+/*   Updated: 2022/11/14 08:57:59 by lboulatr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,11 @@ char	*ft_strrchr(const char *str, int c)
 	x = ft_strlen(str) - 1;
 	b = c;
 	s = (char *)str;
-	while (str[x] != 0)
+	while (s[x])
 	{
 		if (b == '\0')
 			return (&s[x + 1]);
-		else if (str[x] == b)
+		else if (s[x] == b)
 			return (&s[x]);
 		else
 			x--;

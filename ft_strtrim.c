@@ -6,28 +6,27 @@
 /*   By: lboulatr <lboulatr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 10:08:22 by lboulatr          #+#    #+#             */
-/*   Updated: 2022/11/10 13:32:20 by lboulatr         ###   ########.fr       */
+/*   Updated: 2022/11/14 11:00:13 by lboulatr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
-char	*ft_forward(char const *s, char const *set)
+int	ft_forward(char const *s, char const *set)
 {
 	int		i;
 	int		j;
 	int		count;
-	char	*str;
 
 	i = 0;
 	j = 0;
 	count = 0;
-	str = (char *)s;
-	while (str[i] != '\0')
+	while (s[i] != '\0')
 	{
 		while (set[j] != '\0')
 		{
-			if (str[i] == set[j])
+			if (s[i] == set[j])
 			{
 				i++;
 				count++;
@@ -38,10 +37,12 @@ char	*ft_forward(char const *s, char const *set)
 		}
 		i++;
 	}
-	return (&str[count]);
+	if (count == (int)ft_strlen(s))
+		count = 0;
+	return (count);
 }
 
-char	*ft_backward(char *s, char const *set)
+int	ft_backward(char const *s, char const *set)
 {
 	int	i;
 	int	j;
@@ -50,14 +51,14 @@ char	*ft_backward(char *s, char const *set)
 	i = ft_strlen(s) - 1;
 	j = 0;
 	count = i;
-	while (i > 0)
+	while (i >= 0)
 	{
-		while (set[j] != '\0')
+		while (set[j])
 		{
 			if (s[i] == set[j])
 			{
-				i--;
 				count--;
+				i--;
 				j = 0;
 			}
 			else
@@ -65,27 +66,25 @@ char	*ft_backward(char *s, char const *set)
 		}
 		i--;
 	}
-	s[count + 1] = '\0';
-	return (s);
+	if (count == (int)ft_strlen(s))
+		count = 0;
+	return (count);
 }
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	int		x;
+	int		y;
+	int		z;
 	char	*str;
-	char	*str2;
 
-	x = 0;
-	str = ft_forward(s1, set);
-	str = ft_backward(str, set);
-	str2 = malloc(sizeof(char) * (ft_strlen(str) + 1));
-	if (str2 == NULL)
+	if (!s1)
+		return (NULL);
+	y = ((ft_backward(s1, set) - ft_forward(s1, set)) + 1);
+	z = ft_forward(s1, set);
+	str = malloc((sizeof(char) * y) + 1);
+	if (str == NULL)
 		return (0);
-	while (str[x] != '\0')
-	{
-		str2[x] = str[x];
-		x++;
-	}
-	str2[x] = '\0';
-	return (str2);
+	str = ft_memcpy(str, s1 + z, y);
+	str[y] = '\0';
+	return (str);
 }
