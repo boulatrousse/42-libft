@@ -6,13 +6,13 @@
 /*   By: lboulatr <lboulatr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 10:08:22 by lboulatr          #+#    #+#             */
-/*   Updated: 2022/11/15 09:10:02 by lboulatr         ###   ########.fr       */
+/*   Updated: 2022/11/15 11:31:57 by lboulatr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_forward(char const *s, char const *set, int a)
+static int	ft_forward(char const *s, char const *set, int a)
 {
 	int		i;
 	int		count;
@@ -40,7 +40,7 @@ int	ft_forward(char const *s, char const *set, int a)
 	return (count);
 }
 
-int	ft_backward(char const *s, char const *set)
+static int	ft_backward(char const *s, char const *set)
 {
 	int	i;
 	int	j;

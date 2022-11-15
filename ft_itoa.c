@@ -6,14 +6,14 @@
 /*   By: lboulatr <lboulatr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/13 15:06:30 by lboulatr          #+#    #+#             */
-/*   Updated: 2022/11/15 09:28:48 by lboulatr         ###   ########.fr       */
+/*   Updated: 2022/11/15 11:31:27 by lboulatr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdio.h>
 
-int	count(long int n)
+static int	count(long int n)
 {
 	int	i;
 
@@ -33,7 +33,7 @@ int	count(long int n)
 	return (i);
 }
 
-char	*is_pos(long int n, int i)
+static char	*is_pos(long int n, int i)
 {
 	int		x;
 	int		y;
@@ -54,7 +54,7 @@ char	*is_pos(long int n, int i)
 	return (str);
 }
 
-char	*is_neg(long int n, int i)
+static char	*is_neg(long int n, int i)
 {
 	int		x;
 	int		y;

@@ -6,7 +6,7 @@
 /*   By: lboulatr <lboulatr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 13:13:19 by lboulatr          #+#    #+#             */
-/*   Updated: 2022/11/15 09:46:49 by lboulatr         ###   ########lyon.fr   */
+/*   Updated: 2022/11/15 13:21:36 by lboulatr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,7 @@ void		ft_putstr_fd(char *s, int fd);
 void		ft_putendl_fd(char *s, int fd);
 void		ft_putnbr_fd(int n, int fd);
 char		*ft_strnstr(const char *haystack, const char *needle, size_t len);
-size_t		ft_strlcat(char *dst, const char *src, size_t size);
+size_t		ft_strlcat(char *dest, char *src, size_t size);
+void        ft_striteri(char *s, void (*f)(unsigned int, char*));
 
 #endif 
