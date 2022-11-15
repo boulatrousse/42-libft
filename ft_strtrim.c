@@ -6,36 +6,34 @@
 /*   By: lboulatr <lboulatr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 10:08:22 by lboulatr          #+#    #+#             */
-/*   Updated: 2022/11/14 11:00:13 by lboulatr         ###   ########.fr       */
+/*   Updated: 2022/11/15 09:10:02 by lboulatr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
-int	ft_forward(char const *s, char const *set)
+int	ft_forward(char const *s, char const *set, int a)
 {
 	int		i;
-	int		j;
 	int		count;
 
 	i = 0;
-	j = 0;
 	count = 0;
-	while (s[i] != '\0')
+	while (s[i])
 	{
-		while (set[j] != '\0')
+		while (set[a])
 		{
-			if (s[i] == set[j])
+			if (s[i] == set[a])
 			{
 				i++;
 				count++;
-				j = 0;
+				a = 0;
 			}
 			else
-				j++;
+				a++;
 		}
-		i++;
+		if (i != (int)ft_strlen(s))
+			i++;
 	}
 	if (count == (int)ft_strlen(s))
 		count = 0;
@@ -55,7 +53,7 @@ int	ft_backward(char const *s, char const *set)
 	{
 		while (set[j])
 		{
-			if (s[i] == set[j])
+			if (s[i] == set[j] && i != 0)
 			{
 				count--;
 				i--;
@@ -73,18 +71,26 @@ int	ft_backward(char const *s, char const *set)
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
+	int		a;
 	int		y;
 	int		z;
 	char	*str;
 
 	if (!s1)
 		return (NULL);
-	y = ((ft_backward(s1, set) - ft_forward(s1, set)) + 1);
-	z = ft_forward(s1, set);
-	str = malloc((sizeof(char) * y) + 1);
-	if (str == NULL)
-		return (0);
-	str = ft_memcpy(str, s1 + z, y);
+	a = 0;
+	y = ft_backward(s1, set) - ft_forward(s1, set, a);
+	z = ft_forward(s1, set, a);
+	if (y != 0)
+	{
+		y++;
+		str = malloc((sizeof(char) * y) + 1);
+		if (str == NULL)
+			return (0);
+		str = ft_memcpy(str, s1 + z, y);
+	}
+	else
+		str = malloc((sizeof(char) * 1));
 	str[y] = '\0';
 	return (str);
 }

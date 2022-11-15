@@ -6,14 +6,14 @@
 /*   By: lboulatr <lboulatr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/13 15:06:30 by lboulatr          #+#    #+#             */
-/*   Updated: 2022/11/14 14:01:24 by lboulatr         ###   ########.fr       */
+/*   Updated: 2022/11/15 09:28:48 by lboulatr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdio.h>
 
-int	count(int n)
+int	count(long int n)
 {
 	int	i;
 
@@ -33,7 +33,7 @@ int	count(int n)
 	return (i);
 }
 
-char	*is_pos(int n, int i)
+char	*is_pos(long int n, int i)
 {
 	int		x;
 	int		y;
@@ -54,7 +54,7 @@ char	*is_pos(int n, int i)
 	return (str);
 }
 
-char	*is_neg(int n, int i)
+char	*is_neg(long int n, int i)
 {
 	int		x;
 	int		y;
@@ -84,21 +84,15 @@ char	*is_neg(int n, int i)
 
 char	*ft_itoa(int n)
 {
-	int		i;
+	int			i;
 	long int	x;
-	char	*str;
+	char		*str;
 
 	i = count(n) + 1;
 	x = n;
-	if (x == -2147483648)
-	{
-		str = "-2147483648";
-		str[11] = '\0';
-		return (str);
-	}
-	if (n >= 0)
-		str = is_pos(n, i);
+	if (x >= 0)
+		str = is_pos(x, i);
 	else
-		str = is_neg(n, i);
+		str = is_neg(x, i);
 	return (str);
 }
