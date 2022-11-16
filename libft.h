@@ -6,7 +6,7 @@
 /*   By: lboulatr <lboulatr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 13:13:19 by lboulatr          #+#    #+#             */
-/*   Updated: 2022/11/15 13:21:36 by lboulatr         ###   ########.fr       */
+/*   Updated: 2022/11/16 16:27:15 by lboulatr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,12 @@
 
 # include <stdlib.h>
 # include <unistd.h>
+
+typedef struct s_list
+{
+	void			*content;
+	struct s_list	*next;
+}					t_list;
 
 int			ft_isalpha(int c);
 int			ft_isdigit(int c);
@@ -50,7 +56,14 @@ void		ft_putstr_fd(char *s, int fd);
 void		ft_putendl_fd(char *s, int fd);
 void		ft_putnbr_fd(int n, int fd);
 char		*ft_strnstr(const char *haystack, const char *needle, size_t len);
-size_t		ft_strlcat(char *dest, char *src, size_t size);
-void        ft_striteri(char *s, void (*f)(unsigned int, char*));
+size_t		ft_strlcat(char *dest, char const *src, size_t size);
+void		ft_striteri(char *s, void (*f)(unsigned int, char*));
+t_list 		*ft_lstnew(void *content);
+void 		ft_lstadd_front(t_list **lst, t_list *new);
+int ft_lstsize(t_list *lst);
+t_list *ft_lstlast(t_list *lst);
+void ft_lstadd_back(t_list **lst, t_list *new);
+void ft_lstdelone(t_list *lst, void (*del)(void*));
+
 
 #endif 

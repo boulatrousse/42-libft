@@ -6,7 +6,7 @@
 /*   By: lboulatr <lboulatr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 10:08:22 by lboulatr          #+#    #+#             */
-/*   Updated: 2022/11/15 11:31:57 by lboulatr         ###   ########.fr       */
+/*   Updated: 2022/11/16 17:35:27 by lboulatr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,16 +71,14 @@ static int	ft_backward(char const *s, char const *set)
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	int		a;
 	int		y;
 	int		z;
 	char	*str;
 
-	if (!s1)
+	if (!s1 || !set)
 		return (NULL);
-	a = 0;
-	y = ft_backward(s1, set) - ft_forward(s1, set, a);
-	z = ft_forward(s1, set, a);
+	y = ft_backward(s1, set) - ft_forward(s1, set, 0);
+	z = ft_forward(s1, set, 0);
 	if (y != 0)
 	{
 		y++;
@@ -90,7 +88,11 @@ char	*ft_strtrim(char const *s1, char const *set)
 		str = ft_memcpy(str, s1 + z, y);
 	}
 	else
+	{
 		str = malloc((sizeof(char) * 1));
+		if (!str)
+			return (NULL);
+	}
 	str[y] = '\0';
 	return (str);
 }
