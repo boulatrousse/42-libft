@@ -6,12 +6,11 @@
 /*   By: lboulatr <lboulatr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/13 15:06:30 by lboulatr          #+#    #+#             */
-/*   Updated: 2022/11/15 11:31:27 by lboulatr         ###   ########.fr       */
+/*   Updated: 2022/11/17 15:38:31 by lboulatr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 static int	count(long int n)
 {

@@ -6,7 +6,7 @@
 /*   By: lboulatr <lboulatr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 09:15:59 by lboulatr          #+#    #+#             */
-/*   Updated: 2022/11/14 12:14:18 by lboulatr         ###   ########.fr       */
+/*   Updated: 2022/11/17 14:42:49 by lboulatr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_substr(char const *str, unsigned int start, size_t len)
 
 	i = 0;
 	if (!str)
-		return (0);
+		return (NULL);
 	dest = malloc(sizeof(char) * (len + 1));
 	if (dest == NULL)
 		return (0);

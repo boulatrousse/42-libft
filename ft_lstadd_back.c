@@ -6,7 +6,7 @@
 /*   By: lboulatr <lboulatr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 14:46:33 by lboulatr          #+#    #+#             */
-/*   Updated: 2022/11/16 16:48:58 by lboulatr         ###   ########lyon.fr   */
+/*   Updated: 2022/11/17 12:51:20 by lboulatr         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 {
 	t_list	*end;
 
-	if (!*lst)
+	if (!(*lst))
 	{
 		*lst = new;
 		return ;

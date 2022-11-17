@@ -6,7 +6,7 @@
 /*   By: lboulatr <lboulatr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 12:50:55 by lboulatr          #+#    #+#             */
-/*   Updated: 2022/11/16 12:47:41 by lboulatr         ###   ########lyon.fr   */
+/*   Updated: 2022/11/17 09:33:44 by lboulatr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,11 +73,11 @@ char	**ft_split(char const *s, char c)
 
 	i = 0;
 	index = 0;
-	rows = count_rows(s, c);
 	if (!s)
 		return (NULL);
 	else
 	{
+		rows = count_rows(s, c);
 		array = (char **)malloc((rows + 1) * sizeof(char *));
 		if (!array)
 			return (NULL);

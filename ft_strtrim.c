@@ -6,93 +6,71 @@
 /*   By: lboulatr <lboulatr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 10:08:22 by lboulatr          #+#    #+#             */
-/*   Updated: 2022/11/16 17:35:27 by lboulatr         ###   ########.fr       */
+/*   Updated: 2022/11/17 08:43:11 by lboulatr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_forward(char const *s, char const *set, int a)
-{
-	int		i;
-	int		count;
-
-	i = 0;
-	count = 0;
-	while (s[i])
-	{
-		while (set[a])
-		{
-			if (s[i] == set[a])
-			{
-				i++;
-				count++;
-				a = 0;
-			}
-			else
-				a++;
-		}
-		if (i != (int)ft_strlen(s))
-			i++;
-	}
-	if (count == (int)ft_strlen(s))
-		count = 0;
-	return (count);
-}
-
-static int	ft_backward(char const *s, char const *set)
+static int	ft_is_set(char c, char const *set)
 {
 	int	i;
-	int	j;
-	int	count;
 
-	i = ft_strlen(s) - 1;
-	j = 0;
-	count = i;
-	while (i >= 0)
+	i = 0;
+	while (set[i])
 	{
-		while (set[j])
-		{
-			if (s[i] == set[j] && i != 0)
-			{
-				count--;
-				i--;
-				j = 0;
-			}
-			else
-				j++;
-		}
-		i--;
+		if (c == set[i])
+			return (1);
+		i++;
 	}
-	if (count == (int)ft_strlen(s))
-		count = 0;
-	return (count);
+	return (0);
+}
+
+static int	ft_front(char const *s1, char const *set)
+{
+	int	i;
+
+	i = 0;
+	while (s1[i] && ft_is_set(s1[i], set) == 1)
+		i++;
+	return (i);
+}
+
+static int	ft_back(char const *s1, char const *set)
+{
+	int	i;
+	int	x;
+
+	i = 0;
+	x = ft_strlen(s1) - 1;
+	while (x >= 0 && ft_is_set(s1[x], set) == 1)
+	{
+		i++;
+		x--;
+	}
+	return (i);
 }
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	int		y;
-	int		z;
+	int		front;
+	int		back;
 	char	*str;
 
 	if (!s1 || !set)
 		return (NULL);
-	y = ft_backward(s1, set) - ft_forward(s1, set, 0);
-	z = ft_forward(s1, set, 0);
-	if (y != 0)
+	front = ft_front(s1, set);
+	back = ft_back(s1, set);
+	if (front == (int)ft_strlen(s1))
 	{
-		y++;
-		str = malloc((sizeof(char) * y) + 1);
-		if (str == NULL)
-			return (0);
-		str = ft_memcpy(str, s1 + z, y);
-	}
-	else
-	{
-		str = malloc((sizeof(char) * 1));
+		str = malloc(sizeof(char));
 		if (!str)
 			return (NULL);
+		str[0] = '\0';
+		return (str);
 	}
-	str[y] = '\0';
+	str = ft_substr(s1, front, ft_strlen(s1) - front - back);
+	if (!str)
+		return (NULL);
 	return (str);
 }

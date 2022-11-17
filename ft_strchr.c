@@ -6,7 +6,7 @@
 /*   By: lboulatr <lboulatr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 08:37:14 by lboulatr          #+#    #+#             */
-/*   Updated: 2022/11/14 15:12:02 by lboulatr         ###   ########.fr       */
+/*   Updated: 2022/11/17 15:33:26 by lboulatr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,13 @@
 
 char	*ft_strchr(const char *str, int c)
 {
-	int		i;
-	char	b;
-	char	*s;
+	int			i;
+	char		b;
+	char		*s;
 
 	i = 0;
 	b = c;
 	s = (char *)str;
-	if (s == 0)
-		return (s);
 	while (str[i] != '\0')
 	{
 		if (str[i] == b)
@@ -33,5 +31,5 @@ char	*ft_strchr(const char *str, int c)
 	if ((str[i] == '\0') && (b == '\0'))
 		return (&s[i]);
 	else
-		return (0);
+		return (NULL);
 }
