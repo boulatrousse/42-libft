@@ -6,30 +6,48 @@
 /*   By: lboulatr <lboulatr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 09:15:59 by lboulatr          #+#    #+#             */
-/*   Updated: 2022/11/17 14:42:49 by lboulatr         ###   ########.fr       */
+/*   Updated: 2022/11/19 14:58:49 by lboulatr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(char const *str, unsigned int start, size_t len)
+static int	len_count(char const *str, unsigned int start, size_t len)
 {
-	unsigned int	i;
-	char			*dest;
+	int	i;
+	int	x;
 
 	i = 0;
+	x = ft_strlen(str);
+	if (len > (x - start))
+		return (x - start);
+	else
+		return (len);
+}
+
+char	*ft_substr(char const *str, unsigned int start, size_t len)
+{
+	int		x;
+	char	*dest;
+
 	if (!str)
 		return (NULL);
-	dest = malloc(sizeof(char) * (len + 1));
-	if (dest == NULL)
-		return (0);
 	if (start >= ft_strlen(str))
 	{
+		dest = malloc(sizeof(char));
+		if (!dest)
+			return (NULL);
 		dest[0] = '\0';
 		return (dest);
 	}
-	while (i < len)
-		dest[i++] = str[start++];
-	dest[i] = '\0';
-	return (dest);
+	else
+	{
+		x = len_count(str, start, len);
+		dest = malloc(sizeof(char) * (x + 1));
+		if (!dest)
+			return (NULL);
+		ft_strlcpy(dest, &str[start], (x + 1));
+		dest[x] = '\0';
+		return (dest);
+	}
 }

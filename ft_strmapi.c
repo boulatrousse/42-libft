@@ -6,7 +6,7 @@
 /*   By: lboulatr <lboulatr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/13 15:02:41 by lboulatr          #+#    #+#             */
-/*   Updated: 2022/11/13 17:40:02 by lboulatr         ###   ########.fr       */
+/*   Updated: 2022/11/19 15:11:10 by lboulatr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 
 	i = 0;
 	x = 0;
-	if (s == 0)
-		return (0);
+	if (!s || !(*f))
+		return (NULL);
 	y = ft_strlen(s) + 1;
 	str = malloc(y * sizeof(char));
 	if (!str)

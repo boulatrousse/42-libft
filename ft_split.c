@@ -6,7 +6,7 @@
 /*   By: lboulatr <lboulatr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 12:50:55 by lboulatr          #+#    #+#             */
-/*   Updated: 2022/11/17 09:33:44 by lboulatr         ###   ########.fr       */
+/*   Updated: 2022/11/19 16:01:33 by lboulatr         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,18 @@ static int	ft_is_charset(char c, char charset)
 	if (c == charset)
 		return (1);
 	return (0);
+}
+
+static void	free_str_array(char **array)
+{
+	int	i;
+
+	if (!array)
+		return ;
+	i = -1;
+	while (array[++i])
+		free(array[i]);
+	free(array);
 }
 
 static int	count_rows(char const *s, char c)
@@ -84,9 +96,10 @@ char	**ft_split(char const *s, char c)
 		while (i < rows)
 		{
 			array[i] = ft_str(s, c, &index);
+			if (!array[i])
+				return (free_str_array(array), NULL);
 			i++;
 		}
-		array[i] = 0;
-		return (array);
+		return (array[i] = 0, array);
 	}
 }
