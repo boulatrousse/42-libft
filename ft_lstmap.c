@@ -6,7 +6,7 @@
 /*   By: lboulatr <lboulatr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 12:47:34 by lboulatr          #+#    #+#             */
-/*   Updated: 2022/11/20 14:32:22 by lboulatr         ###   ########lyon.fr   */
+/*   Updated: 2022/11/21 11:07:12 by lboulatr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	t_list	*tmp;
 	t_list	*start;
 
-	if (lst)
+	if (lst && f && del)
 	{
 		tmp = lst;
 		start = ft_lstnew(f(tmp->content));
