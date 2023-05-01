@@ -6,7 +6,7 @@
 /*   By: osterger <osterger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 13:13:19 by lboulatr          #+#    #+#             */
-/*   Updated: 2023/05/01 02:54:26 by osterger         ###   ########.fr       */
+/*   Updated: 2023/05/01 03:20:40 by osterger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,9 @@ void		*ft_free(void **ptr);
 char		*ft_join_three(char *str1, char *str2, char *str3);
 int			ft_array_len(char **array);
 char		**ft_array_dup(char **array);
-
+void		ft_print_array(char **array);
+void		ft_close_fd(void);
+int			ft_numlen(int nbr);
 // FT_PRINTF
 
 int			ft_printf(const char *str, ...);

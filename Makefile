@@ -6,7 +6,7 @@
 #    By: osterger <osterger@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/07 13:06:34 by lboulatr          #+#    #+#              #
-#    Updated: 2023/05/01 02:38:25 by osterger         ###   ########.fr        #
+#    Updated: 2023/05/01 03:16:06 by osterger         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -68,6 +68,7 @@ SRCS                    = libft/ft_atoi.c\
                         libft/ft_free.c\
                         libft/ft_free_array.c\
                         libft/ft_join_three.c\
+                        libft/ft_close_fd.c\
                         \
                         ft_printf/ft_printf.c\
                         ft_printf/ft_hexa.c\
