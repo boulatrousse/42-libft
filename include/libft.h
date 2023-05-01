@@ -6,7 +6,7 @@
 /*   By: osterger <osterger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 13:13:19 by lboulatr          #+#    #+#             */
-/*   Updated: 2023/05/01 03:20:40 by osterger         ###   ########.fr       */
+/*   Updated: 2023/05/01 03:27:12 by osterger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ typedef struct s_list
 	struct s_list	*next;
 }					t_list;
 
-//LIBFT
+// ----------------------- LIBFT ----------------------------------------
 
 int			ft_isalpha(int c);
 int			ft_isdigit(int c);
@@ -82,7 +82,8 @@ char		**ft_array_dup(char **array);
 void		ft_print_array(char **array);
 void		ft_close_fd(void);
 int			ft_numlen(int nbr);
-// FT_PRINTF
+
+// ----------------------- FT_PRINTF ----------------------------------------
 
 int			ft_printf(const char *str, ...);
 int			ft_hexa(unsigned int nbr, int check, char *base, int *x);
