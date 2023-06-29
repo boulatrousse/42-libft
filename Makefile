@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: osterger <osterger@student.42.fr>          +#+  +:+       +#+         #
+#    By: lboulatr <lboulatr@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/07 13:06:34 by lboulatr          #+#    #+#              #
-#    Updated: 2023/05/01 03:16:06 by osterger         ###   ########.fr        #
+#    Updated: 2023/06/29 08:39:51 by lboulatr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -69,6 +69,7 @@ SRCS                    = libft/ft_atoi.c\
                         libft/ft_free_array.c\
                         libft/ft_join_three.c\
                         libft/ft_close_fd.c\
+                        libft/ft_exit.c\
                         \
                         ft_printf/ft_printf.c\
                         ft_printf/ft_hexa.c\
@@ -103,7 +104,7 @@ all:    			    ${NAME}
 ${NAME}:    		    ${OBJS}
 							@echo "$(BLUE)[CREATE]$(EOC) $@"
 						    @${LIB} ${NAME} ${OBJS}
-						    @echo "$(GREEN)[LIBFT IS READY]$(EOC) $@"
+						    @echo "$(GREEN) ➤ $(NAME) is ready !$(EOC)"
 
 clean:
 					        @${RM} ${OBJS}

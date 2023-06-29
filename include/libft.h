@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: osterger <osterger@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lboulatr <lboulatr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 13:13:19 by lboulatr          #+#    #+#             */
-/*   Updated: 2023/05/01 03:32:24 by osterger         ###   ########.fr       */
+/*   Updated: 2023/06/29 08:40:02 by lboulatr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,6 +83,7 @@ void		ft_print_array(char **array);
 void		ft_close_fd(void);
 int			ft_numlen(int nbr);
 int			ft_abs(int nbr);
+void    	ft_exit(char *msg);
 
 // ----------------------- FT_PRINTF ----------------------------------------
 
