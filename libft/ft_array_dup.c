@@ -33,7 +33,7 @@ char	**ft_array_dup(char **array)
 
 static int	copy_array(char **array, char **dup_array)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
 	while (array[i])

@@ -14,7 +14,7 @@
 
 static int	ft_is_set(char c, char const *set)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
 	while (set[i])
@@ -38,8 +38,8 @@ static int	ft_front(char const *s1, char const *set)
 
 static int	ft_back(char const *s1, char const *set)
 {
-	int	i;
-	int	x;
+	int		i;
+	size_t	x;
 
 	i = 0;
 	x = ft_strlen(s1) - 1;

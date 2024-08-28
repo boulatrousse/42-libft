@@ -14,7 +14,7 @@
 
 int	ft_array_len(char **array)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
 	if (!array || !array[i])
